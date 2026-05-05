@@ -73,7 +73,7 @@ export default function DashboardPage() {
                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
                   <XAxis dataKey="month" tick={{ fontSize: 12 }} />
                   <YAxis tick={{ fontSize: 12 }} tickFormatter={(v) => `${(v / 10000).toFixed(0)}万`} />
-                  <Tooltip formatter={(v: number) => [fmt(v), "売上"]} />
+                  <Tooltip formatter={(v) => [fmt(Number(v)), "売上"]} />
                   <Bar dataKey="amount" fill="#6366f1" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
@@ -88,7 +88,7 @@ export default function DashboardPage() {
                     <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
                     <XAxis type="number" tick={{ fontSize: 12 }} tickFormatter={(v) => `${(v / 10000).toFixed(0)}万`} />
                     <YAxis type="category" dataKey="name" tick={{ fontSize: 12 }} width={70} />
-                    <Tooltip formatter={(v: number) => [fmt(v), "売上"]} />
+                    <Tooltip formatter={(v) => [fmt(Number(v)), "売上"]} />
                     <Bar dataKey="amount" fill="#10b981" radius={[0, 4, 4, 0]} />
                   </BarChart>
                 </ResponsiveContainer>

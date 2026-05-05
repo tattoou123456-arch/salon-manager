@@ -141,7 +141,7 @@ export default function TaxPage() {
                 <BarChart data={chartData}>
                   <XAxis dataKey="month" tick={{ fontSize: 12 }} />
                   <YAxis tick={{ fontSize: 12 }} tickFormatter={(v) => `${(v / 10000).toFixed(0)}万`} />
-                  <Tooltip formatter={(v: number) => [fmt(v), "消費税"]} />
+                  <Tooltip formatter={(v) => [fmt(Number(v)), "消費税"]} />
                   <Bar dataKey="tax" radius={[4, 4, 0, 0]}>
                     {chartData.map((_, i) => <Cell key={i} fill="#6366f1" />)}
                   </Bar>
